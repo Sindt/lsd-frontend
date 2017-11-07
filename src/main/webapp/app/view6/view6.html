@@ -1,0 +1,27 @@
+
+<h1 class="h1">Create post</h1>
+<br>
+<br>
+<div class="container">
+    <div class="col-md-5">
+        <div class="form-area">
+            <form role="form">
+                <br style="clear:both">
+                <div class="form-group">
+                    <label class="createPostTitle">Title</label>
+                    <input type="text" class="form-control" id="title" ng-model="post_title" placeholder="Title" required>
+                </div>
+                <div class="form-group">
+                    <label class="createPostTitle">URL</label>
+                    <input type="text" class="form-control" id="url" ng-model="post_url" placeholder="http://">
+                </div>
+                <div class="form-group">
+                    <label class="createPostTitle">Text</label>
+                    <textarea class="form-control" rows="5" id="postText" ng-model="post_text" placeholder="Write something..."></textarea>
+                </div>
+
+                <button type="button" id="submit" name="submit" ng-click="submitPost()" class="btn btn-primary pull-right">Submit story</button>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,37 @@
+
+<h1 class="h1"> Profile</h1>
+<br>
+<br>
+<div class="col col-lg-12">
+    <label class="createPostTitle">Name:  </label><label> {{user.username}}</label> 
+    <br>
+    <label class="createPostTitle">Karma:  </label><label> {{user.karma}} </label>
+    <br>
+    <label class="createPostTitle">E-mail:  </label><label> {{user.email}}</label>
+    <br>
+    <label class="createPostTitle">password:  </label><label> ********</label>
+    <br>
+</div>
+
+
+
+<div class="col col-lg-4" ng-show="loggedInUser()">
+    <hr>
+        <label class="createPostTitleBig">Change password</label>
+    <br>
+    <form ng-submit="submit()">
+        <div>
+            <label class="createPostTitle" for="pwd">New password:</label>
+            <input type="password" class="form-control" ng-model="pwd1"/>
+            <br>
+        </div>
+        <div>          
+            <label class="createPostTitle" for="pwd">Confirm new password:</label>
+            <input type="password" class="form-control" ng-model="pwd2"/>
+            <br>
+        </div>
+        <button type="submit" class="btn btn-primary" id="submit" value="Submit">submit</button>
+    </form>
+</div>
+
+

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en" ng-app="myApp" class="no-js"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Hackernews Clone</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="app/app.css">
+
+    <!-- In production use:
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
+    -->
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src='bower_components/angular-animate/angular-animate.min.js'></script>
+    <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+    <script src="bower_components/angular-local-storage/angular-local-storage.min.js"></script> 
+    <script src="app/app.js"></script>
+    <script src="app/view1/view1.js"></script>
+    <script src="app/profileView/profileView.js"></script>
+    <script src="app/view3/view3.js"></script>
+    <script src="app/loginView/loginView.js"></script>
+    <script src="app/view5/view5.js"></script>
+    <script src="app/view6/view6.js"></script>
+    <script src="app/view7/view7.js"></script>
+
+    
+    <script src="app/components/authentication.js"></script>
+    <script src="app/components/filters.js"></script>
+    <script src="app/components/directives.js"></script>
+    <script src="app/components/factories.js"></script>
+    <script src="app/components/services.js"></script>
+    <script src="app/components/fakeBackend.js"></script>
+
+
+
+  </head>
+  <body ng-app="myApp">
+
+    <div class="container"  >
+      <nav class="navbar navbar-fixed-top navbar-inverse bg-inverse" role="navigation" ng-controller="AppLoginCtrl">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">{{title}}</a>
+          </div>
+          <div id="navbar" class="">
+            <ul class="nav navbar-nav">
+              <li><a href="#/view1">Frontpage</a></li>
+              <li ng-show="isAuthenticated"><a href="#/view6">Create Post</a></li>
+              <li ng-show="isAuthenticated"><a href="#/profileView">Profile</a></li>
+              <li ng-show="!isAuthenticated"><a href="#/loginView">Login</a></li>
+              <li ng-show="!isAuthenticated"><a href="#/view5">Register</a></li>
+            </ul>
+            <div>
+
+            <div class="navbar-right" ng-show="isAuthenticated">
+
+              <p class="navbar-text">Logged on as: {{user.username}}</p>
+
+              <button type="submit" class="btn btn-primary navbar-btn"  ng-click="logout()">Logout
+              </button>
+            </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      <div class="container">
+        <div style="margin-top: 60px;">
+          <hr style="background: white; border:0; height:7px" />
+          <div class="alert alert-danger" id="error" role="alert" ng-show="error">{{error}}</div>
+          <div class="fixed-height" ng-view></div>
+        </div>
+      </div>
+    </div>
+      
+    <div id="footer">
+      <hr>
+      <ul>
+        <li>Christian Sindt</li>
+        <li>Kasper Pontoppidan</li>
+        <li>Kasper Olesen</li>
+        <li>Emil Pilaard</li>
+        <li>Andreas Larsen</li>
+      </ul>
+      
+      <ul>
+        <li>Hackernews clone</li>
+        <li>Group J</li>
+        <li>Large Systems Development</li>
+        <li>CPH Business - Lyngby</li>
+        <li><br></li>
+      </ul>
+      
+      <ul>
+        <li><a href="https://github.com/pilgaard/large_systems">Link to documentation:</a></li>
+        <li><br></li>
+        <li><a href="https://github.com/pilgaard/large_systems/issues">Link to IssueTracker:</a></li>
+        <li><br></li>
+        <li><br></li>
+      </ul>
+      
+      
+      
+    </div>
+      
+<br>
+<br>
+
+
+  </body>
+</html>
